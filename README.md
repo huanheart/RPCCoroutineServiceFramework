@@ -15,6 +15,7 @@ rpc的体现在服务端和客户端的编写，这里由于多数是模拟，�
 * boost库（muduo库是基于boost库，固然需要有所依赖）
 * muduo库（因为有用到异步日志）
 * 有makefile , g++相关工具
+* protobuf相关工具，protoc编译器等
 
 ## 启动
 ```cpp
