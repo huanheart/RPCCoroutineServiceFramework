@@ -1,0 +1,32 @@
+syntax = "proto3" ;
+
+//所在的命名空间
+package example;
+
+
+option cc_generic_services=true;
+
+message ResultCode
+{
+    int32 errcode=1;
+    bytes errmsg=2;
+}
+
+
+message GetListRequest
+{
+    uint32 userid =1;
+}
+
+message GetListResponse
+{
+    ResultCode result=1;
+    repeated bytes val=2;
+}
+
+service ServiceRpc
+{
+    rpc GetList(GetListRequest) returns(GetListResponse);
+}
+
+

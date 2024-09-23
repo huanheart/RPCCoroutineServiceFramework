@@ -1,0 +1,16 @@
+syntax ="proto3";
+
+package RPC;
+
+message RpcHeader
+{
+    bytes service_name=1;
+    bytes method_name=2;
+    //这里虽然是uint32，但是protobuf编码的时候默认就是变长编码
+    uint32 args_size=3;
+    //0表示客户端请求方法，1表示服务端进行方法请求
+    uint32 message_type=4;
+    //用于服务注册的
+    bytes ip=5;
+    uint32 port=6;
+}
